@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .loader {
+        display: none;
+        height: 10em;
+        width: 10em;
+        background: black;
+        border-radius: 50%;
+        position: relative;
+
+        animation: spin 2s;
+        animation-iteration-count: infinite;
+      }
+
+      .loader:before {
+        content: "";
+        position: absolute;
+        inset: 2em;
+        background: white;
+        border-radius: 50%;
+      }
+
+      .loader:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 20%;
+        right: 20%;
+        height: 50%;
+        background: white;
+      }
+
+      body.loading .loader {
+        display: block;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="getPostsFromAPI()">Test</button>
+
+    <main>
+      <div class="loader"></div>
+    </main>
+
+    <script src="./good-examples.js"></script>
+  </body>
+</html>
